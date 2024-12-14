@@ -15,18 +15,17 @@ function handleTimer() {
   if (!timerEnabled()) {
     setTimerEnabled(true);
     timerInterval = setInterval(() => {
-      setTimer(timer().plus({ second: 1 })); // Adjust to 10ms for performance
+      setTimer(timer().plus({ second: 1 }));
     }, 1000);
   } else {
     if (timerInterval !== undefined) {
       clearInterval(timerInterval);
-      timerInterval = undefined; // Reset after clearing
+      timerInterval = undefined;
     }
     setTimerEnabled(false);
   }
 }
 
-// Cleanup interval on unmount
 onCleanup(() => {
   if (timerInterval !== undefined) {
     clearInterval(timerInterval);
