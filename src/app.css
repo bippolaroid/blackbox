@@ -19,3 +19,7 @@ body {
   color: rgb(var(--foreground-rgb));
   font-family: "Helvetica";
 }
+
+div {
+  border: 0.5px solid red;
+}
